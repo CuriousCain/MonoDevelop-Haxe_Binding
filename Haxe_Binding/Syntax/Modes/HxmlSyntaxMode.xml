@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<SyntaxMode name="Hxml" mimeTypes="text/x-hxml">
+
+	<Property name="LineComment">#</Property>
+
+	<EolSpan color="Comment(Line)" rule="Comment" tagColor="Comment(Line)">#</EolSpan>
+
+	<Keywords color="Keyword(Type)">
+		<Word>cp</Word>
+		<Word>js</Word>
+		<Word>swf</Word>
+		<Word>as3</Word>
+		<Word>neko</Word>
+		<Word>php</Word>
+		<Word>cpp</Word>
+		<Word>cs</Word>
+		<Word>java</Word>
+		<Word>xml</Word>
+		<Word>main</Word>
+		<Word>lib</Word>
+		<Word>D</Word>
+		<Word>v</Word>
+		<Word>debug</Word>
+		<Word>dce</Word>
+		<Word>resource</Word>
+		<Word>prompt</Word>
+		<Word>cmd</Word>
+		<Word>x</Word>
+	</Keywords>
+
+	<Keywords color="String">
+		<Word>next</Word>
+		<Word>display</Word>
+		<Word>times</Word>
+		<Word>remap</Word>
+		<Word>interp</Word>
+		<Word>macro</Word>
+		<Word>wait</Word>
+		<Word>connect</Word>
+		<Word>cwd</Word>
+	</Keywords>
+
+	<Match color="Keyword(Type)">swf-header</Match>
+	<Match color="Keyword(Type)">swf-version</Match>
+	<Match color="Keyword(Type)">swf-lib</Match>
+	<Match color="Keyword(Type)">(swf-lib+)-extern</Match>
+	<Match color="Keyword(Type)">java-lib</Match>
+	<Match color="Ketword(Type)">net-lib</Match>
+	<Match color="Keyword(Type)">net-std</Match>
+
+	<Match color="String">flash-strict</Match>
+	<Match color="String">no-traces</Match>
+	<Match color="String">gen-hx-classes</Match>
+	<Match color="String">no-output</Match>
+	<Match color="String">no-inline</Match>
+	<Match color="String">no-opt</Match>
+	<Match color="String">php-front</Match>
+	<Match color="String">php-lib</Match>
+	<Match color="String">php-prefix</Match>
+</SyntaxMode>

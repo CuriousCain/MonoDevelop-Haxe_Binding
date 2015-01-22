@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<Template>
+    <TemplateConfiguration>
+	    <_Name>Empty OpenFL Project</_Name>
+	    <_Category>Haxe</_Category>
+	    <LanguageName>Haxe</LanguageName>
+	    <_Description>Creates an empty OpenFL Project</_Description>
+	    <Icon>openfl-project</Icon>
+	    <Originator>Joel Lord</Originator>
+    </TemplateConfiguration>
+
+    <Combine name="${ProjectName}" directory=".">
+    	<Options>
+    		<StartupProject>${ProjectName}</StartupProject>
+		</Options>
+
+    	<Project name="${ProjectName}" directory="." type="OpenFL">
+    		<Options XmlBuildFile="project.xml"/>
+    		<Files>
+    			<Directory name="Export" />
+    			<Directory name="Assets" />
+    			<Directory name="Source">
+    				<File name="${ProjectName}.hx" AddStandardHeader="True">
+<![CDATA[package;
+import flash.display.Sprite;
+import flash.Lib;
+
+class ${ProjectName} extends Sprite {
+	
+	public function new () {
+		super ();
+	}
+}]]>				</File>
+    			</Directory>
+    			<FileTemplateReference TemplateID="EmptyOpenFLXmlFile" name="project.xml" />
+    		</Files>
+    	</Project>
+    </Combine>
+</Template>

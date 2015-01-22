@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<Template>
+	<TemplateConfiguration>
+		<_Name>Empty OpenFL build/project file</_Name>
+		<Icon>openfl-file</Icon>
+		<_Category>General</_Category>
+		<LanguageName>Haxe</LanguageName>
+		<_Description>Create an empty OpenFL build/project file</_Description>
+	</TemplateConfiguration>
+
+	<TemplateFiles>
+		<File DefaultExtension=".xml" DefaultName="project" AddStandardHeader="True">
+<![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<project>
+	
+	<meta title="${ProjectName}" package="com.sample.myproject" version="1.0.0" company="Company Name" />
+	<app main="${ProjectName}" path="Export" file="${ProjectName}" />
+	
+	<source path="Source" />
+	
+	<haxelib name="openfl" />
+	
+	<assets path="Assets" rename="assets" />
+	
+</project>]]>	
+		</File>
+	</TemplateFiles>
+</Template>

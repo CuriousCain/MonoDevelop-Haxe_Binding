@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<stetic-interface>
+  <configuration>
+    <images-root-path>..</images-root-path>
+    <target-gtk-version>2.12</target-gtk-version>
+  </configuration>
+  <import>
+    <widget-library name="MonoDevelop.Ide, Version=2.6.0.0, Culture=neutral" />
+    <widget-library name="MonoDevelop.SourceEditor2, Version=2.6.0.0, Culture=neutral" />
+    <widget-library name="../bin/Debug/Haxe_Binding.dll" internal="true" />
+  </import>
+  <icon-factory>
+    <icon-set id="haxe-icon">
+      <source>
+        <property name="Image">resource:Haxe_Binding.Icons.haxe-opt.svg</property>
+      </source>
+    </icon-set>
+  </icon-factory>
+  <widget class="Gtk.Bin" id="Haxe_Binding.HaxeOptionsWidget" design-size="461 339">
+    <property name="MemberName" />
+    <property name="Visible">False</property>
+    <child>
+      <placeholder />
+    </child>
+  </widget>
+</stetic-interface>

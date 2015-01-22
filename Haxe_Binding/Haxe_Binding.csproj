@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectTypeGuids>{7DBEB09D-BB9F-4D92-A141-A009135475EF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectGuid>{EFA5490F-1C3E-4191-96CB-99E384E41D87}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Haxe_Binding</RootNamespace>
+    <AssemblyName>Haxe_Binding</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\AddinInfo.cs" />
+    <Compile Include="ProjectBindings\Haxe\HaxeProject.cs" />
+    <Compile Include="ProjectBindings\Haxe\HaxeProjectBinding.cs" />
+    <Compile Include="ProjectBindings\Haxe\HaxeProjectConfiguration.cs" />
+    <Compile Include="LanguageBindings\Haxe\HaxeLanguageBinding.cs" />
+    <Compile Include="GuiClasses\HaxeOptionsPanel.cs" />
+    <Compile Include="gtk-gui\generated.cs" />
+    <Compile Include="gtk-gui\Haxe_Binding.HaxeOptionsWidget.cs" />
+    <Compile Include="LanguageBindings\Haxe\HxmlLanguageBinding.cs" />
+    <Compile Include="Compilation\HaxeCompilation.cs" />
+    <Compile Include="ProjectBindings\OpenFL\OpenFLProject.cs" />
+    <Compile Include="ProjectBindings\OpenFL\OpenFLProjectBinding.cs" />
+    <Compile Include="ProjectBindings\OpenFL\OpenFLProjectConfiguration.cs" />
+    <Compile Include="ProjectBindings\ProjectHelpers.cs" />
+    <Compile Include="Compilation\OpenFLCompilation.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Manifest.addin.xml" />
+    <EmbeddedResource Include="ProjectTemplates\EmptyHaxeProject.xpt.xml" />
+    <EmbeddedResource Include="FileTemplates\EmptyHaxeFile.xft.xml" />
+    <EmbeddedResource Include="Syntax\Modes\HaxeSyntaxMode.xml" />
+    <EmbeddedResource Include="Syntax\Styles\MonokaiStyle.xml" />
+    <EmbeddedResource Include="gtk-gui\gui.stetic">
+      <LogicalName>gui.stetic</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Icons\haxe-opt.svg" />
+    <EmbeddedResource Include="FileTemplates\EmptyHxmlFile.xft.xml" />
+    <EmbeddedResource Include="Syntax\Modes\HxmlSyntaxMode.xml" />
+    <EmbeddedResource Include="Icons\openfl.png" />
+    <EmbeddedResource Include="ProjectTemplates\EmptyOpenFLProject.xpt.xml" />
+    <EmbeddedResource Include="Icons\openfl.svg" />
+    <EmbeddedResource Include="FileTemplates\EmptyOpenFLXmlFile.xft.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Reference Include="Mono.Addins">
+      <HintPath>..\packages\Mono.Addins.1.2\lib\net40\Mono.Addins.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Addins.Setup">
+      <HintPath>..\packages\Mono.Addins.Setup.1.2\lib\net40\Mono.Addins.Setup.dll</HintPath>
+    </Reference>
+    <Reference Include="MonoDevelop.Core, Version=2.6.0.0, Culture=neutral">
+      <Package>monodevelop</Package>
+    </Reference>
+    <Reference Include="MonoDevelop.Ide, Version=2.6.0.0, Culture=neutral">
+      <Package>monodevelop</Package>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="MonoDevelop.SourceEditor2, Version=2.6.0.0, Culture=neutral">
+      <Package>monodevelop-core-addins</Package>
+    </Reference>
+    <Reference Include="gtk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <Package>gtk-sharp-2.0</Package>
+    </Reference>
+    <Reference Include="MonoDevelop.GtkCore, Version=2.6.0.0, Culture=neutral">
+      <Package>monodevelop-core-addins</Package>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="atk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <Package>gtk-sharp-2.0</Package>
+    </Reference>
+    <Reference Include="glib-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <Package>glib-sharp-2.0</Package>
+    </Reference>
+    <Reference Include="gdk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <Package>gtk-sharp-2.0</Package>
+    </Reference>
+    <Reference Include="Mono.Posix" />
+    <Reference Include="nunit.framework">
+      <HintPath>..\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ProjectBindings\" />
+    <Folder Include="ProjectBindings\Haxe\" />
+    <Folder Include="LanguageBindings\" />
+    <Folder Include="LanguageBindings\Haxe\" />
+    <Folder Include="ProjectTemplates\" />
+    <Folder Include="Icons\" />
+    <Folder Include="FileTemplates\" />
+    <Folder Include="Syntax\" />
+    <Folder Include="Syntax\Styles\" />
+    <Folder Include="Syntax\Modes\" />
+    <Folder Include="GuiClasses\" />
+    <Folder Include="gtk-gui\" />
+    <Folder Include="Compilation\" />
+    <Folder Include="ProjectBindings\OpenFL\" />
+  </ItemGroup>
+</Project>

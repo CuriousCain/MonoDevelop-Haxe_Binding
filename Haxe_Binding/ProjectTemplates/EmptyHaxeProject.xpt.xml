@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<Template>
+    <TemplateConfiguration>
+	    <_Name>Empty Haxe Project</_Name>
+	    <_Category>Haxe</_Category>
+	    <LanguageName>Haxe</LanguageName>
+	    <_Description>Creates an empty Haxe Project</_Description>
+	    <Icon>haxe-project</Icon>
+	    <Originator>Joel Lord</Originator>
+    </TemplateConfiguration>
+
+    <Combine name="${ProjectName}" directory=".">
+    	<Options>
+    		<StartupProject>${ProjectName}</StartupProject>
+		</Options>
+
+    	<Project name="${ProjectName}" directory="." type="Haxe">
+    		<Options HXMLBuildFile="build.hxml"/>
+    		<Files>
+    			<Directory name="bin" />
+    			<Directory name="src">
+    				<File name="${ProjectName}.hx" AddStandardHeader="True">
+<![CDATA[package ;
+
+class ${ProjectName} {
+
+	public function new () {
+
+	}
+}]]>				</File>
+    			</Directory>
+    			<File name="build.hxml" AddStandardHeader="True">
+<![CDATA[-cp src
+-main ${SafeProjectName}		
+-[target] bin/ #Replace '[target]' with your compilation platform. eg: swf and add output file after 'bin/'
+]]>				</File>
+    		</Files>
+    	</Project>
+    </Combine>
+</Template>

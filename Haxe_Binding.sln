@@ -1,0 +1,17 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Haxe_Binding", "Haxe_Binding\Haxe_Binding.csproj", "{EFA5490F-1C3E-4191-96CB-99E384E41D87}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EFA5490F-1C3E-4191-96CB-99E384E41D87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFA5490F-1C3E-4191-96CB-99E384E41D87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFA5490F-1C3E-4191-96CB-99E384E41D87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFA5490F-1C3E-4191-96CB-99E384E41D87}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

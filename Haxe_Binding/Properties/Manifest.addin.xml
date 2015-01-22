@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionModel>
+	<Extension path="/MonoDevelop/Core/StockIcons">
+		<StockIcon stockid="haxe-icon" resource="Haxe_Binding.Icons.haxe-opt.svg" size="Menu" />
+		<StockIcon stockid="haxe-icon" resource="Haxe_Binding.Icons.haxe-opt.svg" size="Dnd" />
+		<StockIcon stockid="haxe-icon" resource="Haxe_Binding.Icons.haxe-opt.svg" size="Dialog" />
+		<StockIcon stockid="haxe-project" icon="md-project|res:Haxe_Binding.Icons.haxe-opt.svg" size="Menu" />
+		<StockIcon stockid="haxe-project" icon="md-project|res:Haxe_Binding.Icons.haxe-opt.svg" size="Dnd" />
+		<StockIcon stockid="haxe-project" icon="md-project|res:Haxe_Binding.Icons.haxe-opt.svg" size="Dialog" />
+		<StockIcon stockid="haxe-file" icon="md-text-file-icon|res:Haxe_Binding.Icons.haxe-opt.svg" size="Menu" />
+		<StockIcon stockid="haxe-file" icon="md-text-file-icon|res:Haxe_Binding.Icons.haxe-opt.svg" size="Dnd" />
+		<StockIcon stockid="haxe-file" icon="md-text-file-icon|res:Haxe_Binding.Icons.haxe-opt.svg" size="Dialog" />
+		<StockIcon stockid="openfl-icon" icon="Haxe_Binding.Icons.openfl.svg" size="Menu" />
+		<StockIcon stockid="openfl-icon" icon="Haxe_Binding.Icons.openfl.svg" size="Dnd" />
+		<StockIcon stockid="openfl-icon" icon="Haxe_Binding.Icons.openfl.svg" size="Dialog" />
+		<StockIcon stockid="openfl-project" icon="md-project|res:Haxe_Binding.Icons.openfl.svg" size="Menu" />
+		<StockIcon stockid="openfl-project" icon="md-project|res:Haxe_Binding.Icons.openfl.svg" size="Dnd" />
+		<StockIcon stockid="openfl-project" icon="md-project|res:Haxe_Binding.Icons.openfl.svg" size="Dialog" />
+		<StockIcon stockid="openfl-file" icon="md-text-file-icon|res:Haxe_Binding.Icons.openfl.svg" size="Menu" />
+		<StockIcon stockid="openfl-file" icon="md-text-file-icon|res:Haxe_Binding.Icons.openfl.svg" size="Dnd" />
+		<StockIcon stockid="openfl-file" icon="md-text-file-icon|res:Haxe_Binding.Icons.openfl.svg" size="Dialog" />
+	</Extension>
+
+	<Extension path="/MonoDevelop/ProjectModel/LanguageBindings">
+		<LanguageBinding id="Haxe" supportedextensions=".hx" class="Haxe_Binding.HaxeLanguageBinding" />
+		<LanguageBinding id="Hxml" supportedextensions=".hxml" class="Haxe_Binding.HxmlLanguageBinding" />
+	</Extension>
+
+	<Extension path="/MonoDevelop/Core/MimeTypes">
+		<MimeType id="text/x-haxe" _description="Haxe source file" icon="haxe-file" isText="true">
+			<File pattern="*.hx" />
+		</MimeType>
+		<MimeType id="text/x-hxml" _description="Hxml build file" isText="true">
+			<File pattern="*.hxml" />
+		</MimeType>
+	</Extension>
+
+	<Extension path="/MonoDevelop/Ide/FileFilters">
+		<FileFilter id="Haxe" insertbefore="AllFiles" _label="Haxe Files" extensions="*.hx" />
+		<FileFilter id="Hxml" insertbefore="AllFiles" _label="Hxml Files" extensions="*.hxml" />
+		<FileFilter id="OpenFL" insertbefore="AllFiles" _label="OpenFL Project" extensions="*roject.xml" />
+	</Extension>
+
+	<Extension path="/MonoDevelop/ProjectModel/ProjectBindings">
+		<ProjectBinding id="HaxeProject" class="Haxe_Binding.HaxeProjectBinding" />
+		<ProjectBinding id="OpenFLProject" class="Haxe_Binding.OpenFLProjectBinding" />
+	</Extension>
+
+	<Extension path="/MonoDevelop/Ide/ProjectTemplates">
+		<ProjectTemplate id="EmptyHaxeProject" resource="Haxe_Binding.ProjectTemplates.EmptyHaxeProject.xpt.xml" />
+		<ProjectTemplate id="EmptyOpenFLProject" resource="Haxe_Binding.ProjectTemplates.EmptyOpenFLProject.xpt.xml" />
+	</Extension>
+
+	<Extension path="/MonoDevelop/Ide/FileTemplates">
+		<FileTemplate id="EmptyHaxeSourceFile" resource="Haxe_Binding.FileTemplates.EmptyHaxeFile.xft.xml" />
+		<FileTemplate id="EmptyHxmlBuildFile" resource="Haxe_Binding.FileTemplates.EmptyHxmlFile.xft.xml" />
+		<FileTemplate id="EmptyOpenFLXmlFile" resource="Haxe_Binding.FileTemplates.EmptyOpenFLXmlFile.xft.xml" />
+	</Extension>
+
+	<Extension path="/MonoDevelop/SourceEditor2/SyntaxModes">
+		<Templates resource="Haxe_Binding.Syntax.Modes.HaxeSyntaxMode.xml" />
+		<Templates resource="Haxe_Binding.Syntax.Modes.HxmlSyntaxMode.xml" />
+	</Extension>
+
+	<Extension path="/MonoDevelop/ProjectModel/SerializableClasses">
+		<DataType class="Haxe_Binding.HaxeProject" />
+		<DataType class="Haxe_Binding.HaxeProjectConfiguration" />
+		<DataType class="Haxe_Binding.OpenFLProject" />
+		<DataType class="Haxe_Binding.OpenFLProjectConfiguration" />
+	</Extension>
+
+	<Extension path="/MonoDevelop/Ide/GlobalOptionsDialog">
+		<Section id="HaxeSection" _label="Haxe Binding">
+			<Section id="HaxeOptions" _label="General" icon="haxe-icon" class="Haxe_Binding.HaxeOptionsPanel" />	
+		</Section>
+	</Extension>
+
+	<Extension path="/MonoDevelop/ProjectModel/MSBuildItemTypes">
+		<SolutionItem type="Haxe_Binding.HaxeProject" extension="hxproj" guid="{5ae8b2ef-f769-4aa0-8042-ecaa98f891e1}" />
+		<SolutionItem type="Haxe_Binding.OpenFLProject" extension="flproj" guid="{f254da6e-5fbc-4ed6-bf6b-0c92d271f237}" />
+	</Extension>
+</ExtensionModel>

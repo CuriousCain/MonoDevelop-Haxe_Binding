@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<Template>
+	<TemplateConfiguration>
+		<_Name>Empty Haxe Class</_Name>
+		<Icon>haxe-file</Icon>
+		<_Category>General</_Category>
+		<LanguageName>Haxe</LanguageName>
+		<_Description>Create an empty Haxe class</_Description>
+	</TemplateConfiguration>
+
+	<TemplateFiles>
+		<File DefaultExtension=".hx" DefaultName="EmptyHaxeSourceFile" AddStandardHeader="True">
+<![CDATA[package ;
+
+class ${Name} {
+
+	public function new () {
+
+	}
+}]]>	
+		</File>
+	</TemplateFiles>
+</Template>

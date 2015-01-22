@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<Template>
+	<TemplateConfiguration>
+		<_Name>Empty Hxml build file</_Name>
+		<_Category>Build Files</_Category>
+		<LanguageName>Hxml</LanguageName>
+		<_Description>Create an empty Haxe build file</_Description>
+	</TemplateConfiguration>
+
+	<TemplateFiles>
+		<File DefaultExtension=".hxml" DefaultName="EmptyHxmlBuildFile" AddStandardHeader="True">
+<![CDATA[-cp src
+-main ${SafeProjectName}		
+-[target] bin/ #Replace '[target]' with your compilation platform. eg: swf and add output file after 'bin/'
+]]>			
+		</File>
+	</TemplateFiles>
+</Template>
