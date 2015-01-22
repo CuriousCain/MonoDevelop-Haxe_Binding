@@ -88,7 +88,7 @@ namespace Haxe_Binding
         protected override void DoClean (MonoDevelop.Core.IProgressMonitor monitor, ConfigurationSelector configuration)
         {
             OpenFLProjectConfiguration openflConfig = (OpenFLProjectConfiguration)GetConfiguration (configuration);
-            OpenFLCompilation.Clean (monitor, openflConfig, this);
+            OpenFLCompilation.Clean (openflConfig, this);
         }
 
         protected override void DoExecute (MonoDevelop.Core.IProgressMonitor monitor, ExecutionContext context, ConfigurationSelector configuration)

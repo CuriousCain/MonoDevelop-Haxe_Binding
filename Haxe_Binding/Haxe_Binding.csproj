@@ -44,13 +44,13 @@
     <Compile Include="ProjectBindings\OpenFL\OpenFLProjectConfiguration.cs" />
     <Compile Include="ProjectBindings\ProjectHelpers.cs" />
     <Compile Include="Compilation\OpenFLCompilation.cs" />
+    <Compile Include="Compilation\CompilationHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Manifest.addin.xml" />
     <EmbeddedResource Include="ProjectTemplates\EmptyHaxeProject.xpt.xml" />
     <EmbeddedResource Include="FileTemplates\EmptyHaxeFile.xft.xml" />
     <EmbeddedResource Include="Syntax\Modes\HaxeSyntaxMode.xml" />
-    <EmbeddedResource Include="Syntax\Styles\MonokaiStyle.xml" />
     <EmbeddedResource Include="gtk-gui\gui.stetic">
       <LogicalName>gui.stetic</LogicalName>
     </EmbeddedResource>
