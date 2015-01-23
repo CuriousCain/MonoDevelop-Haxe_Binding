@@ -102,7 +102,7 @@ namespace Haxe_Binding
         {
             ExecutionCommand command = CreateExecutionCommand (project, config);
 
-            return command != null && context.ExecutionHandler.CanExecute (command); 
+            return command != null && context.ExecutionHandler.CanExecute (command);
         }
 
         public static void Clean(OpenFLProjectConfiguration config, OpenFLProject project)

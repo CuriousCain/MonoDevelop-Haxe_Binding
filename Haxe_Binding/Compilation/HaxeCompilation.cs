@@ -176,6 +176,7 @@ namespace Haxe_Binding
             if (target == "swf" || target == "js") {
                 if (!File.Exists(Path.GetFullPath (output))) {
                     output = Path.Combine (project.BaseDirectory, output);
+                    config.DebugMode = false;
                 }
 
                 if(target == "js") {
@@ -207,9 +208,6 @@ namespace Haxe_Binding
 
         public static bool CanRun(ExecutionContext context, HaxeProjectConfiguration config, HaxeProject project)
         {
-            //TODO: Cache this for optimization (From Joshua Granick)
-            //Idea: Possible add to a settings file? Or store in project settings
-
             ExecutionCommand command = CreateExecutionCommand (project, config);
 
             return command != null && context.ExecutionHandler.CanExecute (command);

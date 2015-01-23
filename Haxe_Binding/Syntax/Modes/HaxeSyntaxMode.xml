@@ -18,7 +18,7 @@
 		<End>*/</End>
 	</Span>
 	
-	<Span color="Preprocessor" rule="text.preprocessor" stopateol="true">
+	<Span color="Preprocessor" rule="Text(Proprocessor)" stopateol="true">
 		<Begin>#</Begin>
 		<End>#end</End>
 	</Span>
@@ -157,7 +157,7 @@
 		<Word>using</Word>
 	</Keywords>
 	
-	<Rule name="text.preprocessor">
+	<Rule name="Text(Preprocessor)">
 		<Keywords color="Keyword(Selection)">
 			<Word>if</Word>
 			<Word>else</Word>

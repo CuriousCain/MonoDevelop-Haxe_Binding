@@ -5,12 +5,14 @@ using System.Text;
 using MonoDevelop.Core;
 using System.Diagnostics;
 using MonoDevelop.Core.Execution;
+using System.Collections.Generic;
 
 namespace Haxe_Binding
 {
     public static class CompilationHelper
     {
         static readonly Regex errorFull = new Regex (@"^(?<file>.+)\((?<line>\d+)\):\s(col:\s)?(?<column>\d*)\s?(?<level>\w+):\s(?<message>.*)\.?$", RegexOptions.Compiled | RegexOptions.ExplicitCapture);
+        static readonly Regex errorIgnore = new Regex (@"^(Updated|Recompile|Reason|Files changed):.*", RegexOptions.Compiled);
         // example: test.hx:11: character 7 : Unterminated string
         static readonly Regex errorFileChar = new Regex (@"^(?<file>.+):(?<line>\d+):\s(character\s)(?<column>\d*)\s:\s(?<message>.*)\.?$", RegexOptions.Compiled | RegexOptions.ExplicitCapture);
         // example: test.hx:11: characters 0-5 : Unexpected class
@@ -19,7 +21,8 @@ namespace Haxe_Binding
         static readonly Regex errorFile = new Regex (@"^(?<file>.+):(?<line>\d+):\s(?<message>.*)\.?$", RegexOptions.Compiled | RegexOptions.ExplicitCapture);
         static readonly Regex errorCmdLine = new Regex (@"^command line: (?<level>\w+):\s(?<message>.*)\.?$", RegexOptions.Compiled | RegexOptions.ExplicitCapture);
         static readonly Regex errorSimple = new Regex (@"^(?<level>\w+):\s(?<message>.*)\.?$", RegexOptions.Compiled | RegexOptions.ExplicitCapture);
-        static readonly Regex errorIgnore = new Regex (@"^(Updated|Recompile|Reason|Files changed):.*", RegexOptions.Compiled);
+
+        static readonly List<Regex> errorsList = new List<Regex> { errorFull, errorCmdLine, errorFileChar, errorFileChars, errorFile, errorSimple };
 
         public static int RunCompilation(string command, string args, string workingDirectory, IProgressMonitor monitor, ref string error)
         {
@@ -79,23 +82,19 @@ namespace Haxe_Binding
             Match match = errorIgnore.Match (textLine);
             if (match.Success)
                 return null;
-
-            //TODO: Check errors from an array instead of individually?
-
+            
             match = errorFull.Match (textLine);
-            if (!match.Success)
-                match = errorCmdLine.Match (textLine);
-            if (!match.Success)
-                match = errorFileChar.Match (textLine);
-            if (!match.Success)
-                match = errorFileChars.Match (textLine);
-            if (!match.Success)
-                match = errorFile.Match (textLine);
-
-            if (!match.Success)
-                match = errorSimple.Match (textLine);
-            if (!match.Success)
-                return null;
+            for (int i=0; i<errorsList.Count; ++i) {
+                if(i != errorsList.Count) {
+                    if(!match.Success) {
+                        match = errorsList [i + 1].Match(textLine);
+                    }
+                } else {
+                    if(!match.Success) {
+                        return null;
+                    }
+                }
+            }
 
             int errorLine;
             int errorColumn;
